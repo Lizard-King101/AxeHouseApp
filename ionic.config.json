@@ -1,5 +1,7 @@
 {
   "name": "AxeHouse",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,35 @@
+<ion-content>
+    <!-- [ngStyle]="{'background-position-x': frame+'%'}" -->
+    <div class="background">
+        <video [ngStyle]="{'opacity': videoLoaded ? 1 : 0}" src="../../assets/images/axe_house.webm" class="axe-video">
+        </video>
+    </div>
+    <ion-grid>
+        <ion-row justify-content-center align-items-center>
+
+            <ion-col size-xl="4" size-md="6" size="12" justify-content-center *ngIf="!formselect">
+                
+                
+                <form #checkForm="ngForm" (keyup.enter)="checkForm.valid && onSignin()" (ngSubmit)="checkForm.valid && onSignin()">
+                    <ion-input required type="text" name="email" placeholder="Email" [(ngModel)]="signin.email"></ion-input>
+                    <ion-input required type="password" name="pass" placeholder="Password" [(ngModel)]="signin.pass"></ion-input>
+                    <ion-button expand="block" type="submit" size="default" [disabled]="checkForm.invalid" >Sign In</ion-button>
+                </form>
+                <p>Need an account? <b><a (click)="formselect = true">Sign up</a></b></p>
+            </ion-col>
+
+            <ion-col size-xl="4" size-md="6" size="12" justify-content-center *ngIf="formselect">
+                <form #signForm="ngForm" (keyup.enter)="signForm.valid && onSignup()" (ngSubmit)="signForm.valid && onSignup()">
+                    <h2>Sign Up</h2>
+                    <ion-input required type="text" name="first_name" placeholder="First Name" [(ngModel)]="signup.first_name"></ion-input>
+                    <ion-input required type="text" name="last_name" placeholder="Last Name" [(ngModel)]="signup.last_name"></ion-input>
+                    <ion-input required type="text" name="email" placeholder="Email" [(ngModel)]="signup.email"></ion-input>
+                    <ion-input required type="password" name="pass" placeholder="Password" [(ngModel)]="signup.pass"></ion-input>
+                    <ion-input required type="password" name="repass" placeholder="Confirm Password" [(ngModel)]="signup.repass"></ion-input>
+                    <ion-button expand="block" type="submit" size="default" [disabled]="signForm.invalid" >Sign Up</ion-button>
+                </form>
+                <p>Already have an account? <b><a (click)="formselect = false">Sign in</a></b></p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

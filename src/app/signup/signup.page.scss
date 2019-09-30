@@ -1,0 +1,36 @@
+.axe{
+    position: absolute;
+    background-image: url('../../assets/images/axe_house.png');
+    background-size: cover;
+    background-position-y: center;
+    image-rendering: pixelated;
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.7)) grayscale(.6);
+    width: 100vh;
+    height: 100vh;
+    object-fit: cover ;
+    top: -85px;
+    left: calc(50% + 57px);
+    transform: translate(-50%);
+    opacity: .2;
+    
+} 
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    filter: grayscale(.6);
+    opacity: .2;
+    top: 0;
+    left: 0;
+}
+.axe-video{
+    display: flex;
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    object-fit: cover;
+    left: calc(50% + 120px);
+    transform: translate(-50%);
+    transition: opacity .4s linear;
+}
